@@ -25,7 +25,6 @@ const Text = styled.div`
   color: white;
   font-weight: 700;
   margin-top: 10px;
-  font-family: 'Indie Flower', cursive;
 `;
 
 
@@ -34,7 +33,7 @@ const Loading = () => {
     <Wrapper>
       <Container>
         <l-bouncy size={80} color='white'></l-bouncy>
-        <Text>Cleaning up my resume...</Text>
+        <Text>cleaning up my resume...</Text>
       </Container>
     </Wrapper>
   )

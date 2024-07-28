@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  top: 0;
+  left: 0;
+  font-family: 'Indie Flower', cursive;
+}
