@@ -21,17 +21,17 @@ const Navbar = () => {
   return (
     <Container>
       <ButtonContainer>
-        <a className='rounded-full border-2 border-purple-800 py-1.5 px-2.5 mr-2 text-purple-800 font-bold text-lg'>
+        <a className='rounded-full border-2 border-purple-1000 py-1.5 px-2.5 mr-2 text-purple-1000 font-bold text-lg'>
           works
         </a>
-        <a className='rounded-full border-2 border-purple-800 py-1.5 px-2.5 mr-2 text-purple-800 font-bold text-lg'>
+        <a className='rounded-full border-2 border-purple-1000 py-1.5 px-2.5 mr-2 text-purple-1000 font-bold text-lg'>
           about
         </a>
-        <a className='rounded-full border-2 border-purple-800 py-1.5 px-2.5 mr-2 text-purple-800 font-bold text-lg'>
+        <a className='rounded-full border-2 border-purple-1000 py-1.5 px-2.5 mr-2 text-purple-1000 font-bold text-lg'>
           feed
         </a>
       </ButtonContainer>
-      <a className='rounded-full border-2 border-purple-800 py-1.5 px-2.5 text-purple-800 font-bold text-lg'>
+      <a className='rounded-full border-2 border-purple-1000 py-1.5 px-2.5 text-purple-1000 font-bold text-lg'>
         add smt
       </a>
     </Container>

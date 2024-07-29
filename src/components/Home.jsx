@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import { useEffect, useRef } from 'react';
+
 import { gsap } from 'gsap';
 import SplitTextJS from 'split-text-js';
+import { CgMenuRightAlt } from "react-icons/cg";
 
 import Navbar from './Navbar';
 
@@ -21,7 +23,7 @@ const Header = styled.div`
 `;
 
 const HeaderText = styled.h1`
-  font-size: 80px;
+  font-size: 90px;
   font-weight: 700;
   align-content: center;
   color: #4c00b0;
@@ -46,6 +48,20 @@ const Card = styled.div`
   border-radius: 15px;
   padding: 20px 30px;
   margin-bottom: 10px;
+`;
+
+const CardTitle = styled.div`
+  display: flex;
+  width: 80%;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 5px;
+`;
+
+const CardLayout = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 const Home = () => {
@@ -82,17 +98,67 @@ const Home = () => {
       <Navbar />
       <Header>
         <div className="text-wrapper" ref={textWrapperRef}>
-          <HeaderText>Emily Kim</HeaderText>
-          <HeaderText>Developer</HeaderText>
-          <HeaderText>Art Lover</HeaderText>
+          <HeaderText>emily kim</HeaderText>
+          <HeaderText>developer</HeaderText>
+          <HeaderText>art lover</HeaderText>
         </div>
       </Header>
       <Body>
-        <Card>content</Card>
-        <Card>content</Card>
-        <Card>content</Card>
+        <CardTitle>
+          <CgMenuRightAlt size={15} className='text-purple-1000'/>
+          <h1 className='ml-1 text-purple-1000 font-bold text-lg'>
+            work & projects
+          </h1>
+        </CardTitle>
+        <Card>
+          <CardLayout>
+            <div className='flex items-center'>
+              <h1 className='text-purple-1000 font-bold mr-4 text-xl'>2024</h1>
+              <h1 className='text-purple-1000 font-bold text-5xl'>sonomatic</h1>
+            </div>
+            <div className='flex items-center'>
+              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
+                AI
+              </a>
+              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
+                development
+              </a>
+            </div>
+          </CardLayout>
+        </Card>
+        <Card>
+          <CardLayout>
+            <div className='flex items-center'>
+              <h1 className='text-purple-1000 font-bold mr-4 text-xl'>2024</h1>
+              <h1 className='text-purple-1000 font-bold text-5xl'>sonomatic</h1>
+            </div>
+            <div className='flex items-center'>
+              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
+                AI
+              </a>
+              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
+                development
+              </a>
+            </div>
+          </CardLayout>
+        </Card>
+        <Card>
+          <CardLayout>
+            <div className='flex items-center'>
+              <h1 className='text-purple-1000 font-bold mr-4 text-xl'>2024</h1>
+              <h1 className='text-purple-1000 font-bold text-5xl'>sonomatic</h1>
+            </div>
+            <div className='flex items-center'>
+              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
+                AI
+              </a>
+              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
+                development
+              </a>
+            </div>
+          </CardLayout>
+        </Card>
       </Body>
-
     </Wrapper>
   );
 };
