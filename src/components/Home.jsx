@@ -38,16 +38,17 @@ const Body = styled.div`
   width: 100vw;
   justify-content: center;
   align-items: center;
+  flex: 1;
 `;
 
 const Card = styled.div`
   display: flex;
   width: 80%;
   justify-content: center;
-  border: 3px solid #4c00b0;
+  border: 1px solid #4c00b0;
   border-radius: 15px;
   padding: 20px 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const CardTitle = styled.div`
@@ -63,6 +64,31 @@ const CardLayout = styled.div`
   width: 100%;
   justify-content: space-between;
 `;
+
+const Footer = styled.div`
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  padding: 15px;
+`;
+
+const cardData = [
+  {
+    year: '2024',
+    title: 'unitedmasters',
+    buttons: ['cms', 'frontend']
+  }, 
+  {
+    year: '2024',
+    title: 'sonomatic',
+    buttons: ['AI', 'full stack']
+  },
+  {
+    year: '2024',
+    title: 'im just a girl',
+    buttons: ['coming soon', 'full stack']
+  }
+];
 
 const Home = () => {
   const textWrapperRef = useRef(null);
@@ -110,55 +136,30 @@ const Home = () => {
             work & projects
           </h1>
         </CardTitle>
-        <Card>
-          <CardLayout>
-            <div className='flex items-center'>
-              <h1 className='text-purple-1000 font-bold mr-4 text-xl'>2024</h1>
-              <h1 className='text-purple-1000 font-bold text-5xl'>sonomatic</h1>
-            </div>
-            <div className='flex items-center'>
-              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
-                AI
-              </a>
-              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
-                development
-              </a>
-            </div>
-          </CardLayout>
-        </Card>
-        <Card>
-          <CardLayout>
-            <div className='flex items-center'>
-              <h1 className='text-purple-1000 font-bold mr-4 text-xl'>2024</h1>
-              <h1 className='text-purple-1000 font-bold text-5xl'>sonomatic</h1>
-            </div>
-            <div className='flex items-center'>
-              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
-                AI
-              </a>
-              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
-                development
-              </a>
-            </div>
-          </CardLayout>
-        </Card>
-        <Card>
-          <CardLayout>
-            <div className='flex items-center'>
-              <h1 className='text-purple-1000 font-bold mr-4 text-xl'>2024</h1>
-              <h1 className='text-purple-1000 font-bold text-5xl'>sonomatic</h1>
-            </div>
-            <div className='flex items-center'>
-              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
-                AI
-              </a>
-              <a className='rounded-full border-2 border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-bold text-xl'>
-                development
-              </a>
-            </div>
-          </CardLayout>
-        </Card>
+        {cardData.map((card, index) => (
+          <Card key={index}>
+            <CardLayout>
+              <div className='flex items-center'>
+                <h1 className='text-purple-1000 font-bold mr-4 text-xl'>{card.year}</h1>
+                <h1 className='text-purple-1000 font-medium text-5xl'>{card.title}</h1>
+              </div>
+              <div className='flex items-center'>
+                {card.buttons.map((button, btnIndex) => (
+                  <a
+                    key={btnIndex}
+                    className='rounded-full border border-purple-1000 py-1 px-3 mr-2 text-purple-1000 font-semibold text-xl'
+                  >
+                    {button}
+                  </a>
+                ))}
+              </div>
+            </CardLayout>
+          </Card>
+        ))}
       </Body>
+      <Footer>
+        footer here
+      </Footer>
     </Wrapper>
   );
 };
