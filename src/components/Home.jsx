@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { gsap } from 'gsap';
 import SplitTextJS from 'split-text-js';
@@ -49,6 +50,7 @@ const Card = styled.div`
   border-radius: 15px;
   padding: 20px 30px;
   margin-bottom: 20px;
+  cursor: pointer;
 `;
 
 const CardTitle = styled.div`
@@ -76,22 +78,26 @@ const cardData = [
   {
     year: '2024',
     title: 'unitedmasters',
-    buttons: ['cms', 'frontend']
+    buttons: ['cms', 'frontend'],
+    route: '/unitedmasters'
   }, 
   {
     year: '2024',
     title: 'sonomatic',
-    buttons: ['AI', 'full stack']
+    buttons: ['AI', 'full stack'],
+    route: 'sonomatic'
   },
   {
     year: '2024',
     title: 'im just a girl',
-    buttons: ['coming soon', 'full stack']
+    buttons: ['coming soon', 'full stack'],
+    route: 'im-just-a-girl'
   }
 ];
 
 const Home = () => {
   const textWrapperRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const titles = gsap.utils.toArray('.text-wrapper h1');
@@ -137,7 +143,7 @@ const Home = () => {
           </h1>
         </CardTitle>
         {cardData.map((card, index) => (
-          <Card key={index}>
+          <Card key={index} onClick={() => navigate(card.route)}>
             <CardLayout>
               <div className='flex items-center'>
                 <h1 className='text-purple-1000 font-bold mr-4 text-xl'>{card.year}</h1>
