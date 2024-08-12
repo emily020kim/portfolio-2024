@@ -7,8 +7,9 @@ import Home from './components/Home';
 import UnitedMasters from './components/UnitedMasters';
 
 const Wrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
+  display: flex;
+  height: 100%;
+  width: 100%;
 `;
 
 const App = () => {

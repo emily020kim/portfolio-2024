@@ -20,7 +20,7 @@ const Header = styled.div`
   display: flex;
   width: 100vw;
   justify-content: center;
-  margin: 100px 0 200px 0;
+  margin: 150px 0 200px 0;
 `;
 
 const HeaderText = styled.h1`
